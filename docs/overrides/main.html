@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+  :root {
+    --md-primary-fg-color: #4caf50;
+    --md-primary-fg-color--light: #80e27e;
+    --md-primary-fg-color--dark: #087f23;
+    --md-accent-fg-color: #b9f6ca;
+    --md-accent-fg-color--light: #e8f5e9;
+    --md-accent-fg-color--dark: #00c853;
+  }
+
+  .md-header {
+    background-color: var(--md-primary-fg-color);
+  }
+
+  .md-tabs {
+    background-color: var(--md-primary-fg-color--light);
+  }
+
+  .md-search__input {
+    background-color: var(--md-accent-fg-color--light);
+  }
+
+  .md-nav__link:focus,
+  .md-nav__link:hover {
+    color: var(--md-accent-fg-color--dark);
+  }
+
+  .md-footer {
+    background-color: var(--md-primary-fg-color--dark);
+  }
+  </style>
+{% endblock %}
+
+
+{% block content %}
+<div class="notebook-links">
+  {% if page.nb_url %}
+    <a href="{{ page.nb_url }}" title="Download Notebook" class="md-content__button md-icon">
+      {% include ".icons/material/download.svg" %}
+    </a>
+  {% endif %}
+</div>
+
+{{ super() }}
+{% endblock content %}

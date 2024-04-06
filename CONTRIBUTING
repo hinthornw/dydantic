@@ -1,0 +1,72 @@
+# Contributing to Dydantic
+
+Thank you for your interest in contributing to Dydantic! We welcome contributions from the community to help improve and enhance the library. This document provides guidelines and best practices for contributing to the project.
+
+## Ways to Contribute
+
+There are several ways you can contribute to Dydantic:
+
+- Reporting issues and bugs
+- Suggesting new features or improvements
+- Submitting pull requests to fix bugs or implement new features
+- Improving documentation
+- Spreading the word about Dydantic and helping others learn and use it
+
+## Getting Started
+
+To start contributing to Dydantic, follow these steps:
+
+1. Fork the Dydantic repository on GitHub.
+2. Clone your forked repository to your local machine.
+3. Create a new branch for your changes: `git checkout -b my-feature-branch`.
+4. Make your changes and commit them with descriptive commit messages.
+5. Push your changes to your forked repository.
+6. Open a pull request against the main Dydantic repository.
+
+## Reporting Issues
+
+If you encounter any issues or bugs while using Dydantic, please report them on the [GitHub issue tracker](https://github.com/hinthornw/dydantic/issues). When reporting an issue, please provide the following information:
+
+- A clear and descriptive title
+- Steps to reproduce the issue
+- Expected behavior and actual behavior
+- Any relevant error messages or traceback
+- Version of Dydantic and Python you are using
+- Any additional context or information that may be helpful
+
+## Pull Requests
+
+We welcome pull requests for bug fixes, new features, and improvements. When submitting a pull request, please ensure the following:
+
+- Your pull request targets the `main` branch.
+- Your code adheres to the project's coding style and conventions.
+- Your changes are well-tested and include unit tests where applicable.
+- Your commit messages are clear and descriptive.
+- You have updated the documentation if necessary.
+- You have rebased your branch on the latest `main` branch to avoid merge conflicts.
+
+## Code Style and Conventions
+
+Dydantic follows the [PEP 8](https://www.python.org/dev/peps/pep-0008/) style guide for Python code. Please ensure your code adheres to these guidelines. We also recommend using tools like [Black](https://github.com/psf/black) for code formatting and [Flake8](https://flake8.pycqa.org/) for code linting.
+
+## Testing
+
+Dydantic has a test suite to ensure the reliability and correctness of the library. When making changes, please make sure to run the existing tests and add new tests for any new functionality or bug fixes. You can run the tests using the following command:
+
+```
+poe test
+```
+
+## Documentation
+
+Dydantic uses [MkDocs](https://www.mkdocs.org/) for documentation. If you make changes to the library's functionality or add new features, please update the corresponding documentation in the `docs/` directory. Follow the existing documentation style and conventions.
+
+## Code of Conduct
+
+Please note that Dydantic has a [Code of Conduct](CODE_OF_CONDUCT.md) that all contributors are expected to follow. Be respectful, inclusive, and professional in all interactions within the project.
+
+## License
+
+By contributing to Dydantic, you agree that your contributions will be licensed under the [MIT License](LICENSE).
+
+Thank you for your contributions to Dydantic! Together, we can make this library even better.
