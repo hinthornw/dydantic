@@ -1,0 +1,27 @@
+# Dydantic
+
+[Dydantic](https://github.com/hinthornw/dydantic) is a Python library for dynamically generating [Pydantic](https://github.com/pydantic/pydantic) models from [JSON Schema](https://json-schema.org/). It provides a convenient way to create Pydantic models on-the-fly from general user-defined schemas.
+
+<p align="center">
+  <img src="./static/img/brand/dydantic.svg" width="50%" alt="dyno">
+</p>
+
+## Reference
+
+::: dydantic._utils
+handler: python
+options:
+selection:
+docstring_style: google
+rendering:
+heading_level: 3
+show_root_toc_entry: false
+members: - create_model_from_schema
+
+## Contributing
+
+Contributions to dydantic are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the GitHub repository: [https://github.com/hinthornw/dydantic](https://github.com/hinthornw/dydantic)
+
+## License
+
+dydantic is open-source software licensed under the [MIT License](https://github.com/hinthornw/dydantic/blob/main/LICENSE).
