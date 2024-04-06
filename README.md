@@ -1,5 +1,9 @@
 # dydantic
 
+<p align="left">
+  <img src="./img/dydantic.svg" width="100" alt="dyno">
+</p>
+
 Dydantic is a Python library for dynamically generating Pydantic models from JSON schemas. It provides a convenient way to create Pydantic models on-the-fly based on the structure defined in a JSON schema.
 
 ## Features
