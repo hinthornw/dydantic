@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "dydantic"
+version = "0.0.1"
+description = "Dynamically generate pydantic models from JSON schema."
+authors = ["William Fu-Hinthorn <13333726+hinthornw@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pydantic = "2.0"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.3.5"
+black = "^24.3.0"
+mypy = "^1.9.0"
+
+
+[tool.poetry.group.test.dependencies]
+poethepoet = "^0.25.0"
+pytest = "^8.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poe.tasks]
+ruff = "ruff"
+black = "black"
+mypy = "mypy"
+format = [
+    "ruff --fix .",
+    "black .",
+    "ruff format ."
+]
+lint = [
+    "ruff --check .",
+    "mypy ."
+]
+test = "poetry run pytest tests"
