@@ -20,6 +20,16 @@ mypy = "^1.9.0"
 poethepoet = "^0.25.0"
 pytest = "^8.1.1"
 
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.5.3"
+mkdocs-material = "^9.5.17"
+mkdocstrings = "^0.24.3"
+mkdocstrings-python = "^1.9.2"
+mkdocs-redirects = "^1.2.1"
+mkdocs-minify-plugin = "^0.8.0"
+mkdocs-rss-plugin = "^1.12.1"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

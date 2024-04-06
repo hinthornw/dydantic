@@ -1,10 +1,4 @@
-"""Utility functions for dynamically creating Pydantic models from JSON schemas.
-
-Dydantic provides functionality to generate Pydantic models based on JSON schemas.
-It allows you to define the structure and validation rules of your data using JSON
-schemas and automatically create corresponding Pydantic models.
-
-The main function in this module is `create_model_from_schema`, which takes a JSON
+"""The main function in this module is `create_model_from_schema`, which takes a JSON
 schema as input and returns a dynamically created Pydantic model class. The function
 supports various features such as nested objects, referenced definitions, custom
 configurations, custom base classes, custom validators, and more.
