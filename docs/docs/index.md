@@ -17,6 +17,7 @@ pip install -U dydantic
 
 ## Reference
 
+### `def create_model_from_schema(json_schema: Dict[str, Any],*, **kwargs: Any) -> Type[BaseModel]:`
 ::: dydantic.create_model_from_schema
     handler: python
     options:
@@ -24,7 +25,7 @@ pip install -U dydantic
         docstring_style: google
       rendering:
         heading_level: 3
-      show_root_toc_entry: false
+      show_root_toc_entry: true
       members: 
         - create_model_from_schema
 
