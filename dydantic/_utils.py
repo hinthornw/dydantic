@@ -331,7 +331,7 @@ def create_model_from_schema(
             >>> matrix = Matrix(value=[[1, 2, 3], [4, 5, 6], [7, 8, 9]])
             >>> matrix
             Matrix(value=[[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-    
+
     """  # noqa: E501
     model_name = json_schema.get("title", "DynamicModel")
     field_definitions = {
@@ -458,13 +458,26 @@ def _json_schema_to_pydantic_type(
             ref_schema = ref_schema[path]
         return _json_schema_to_pydantic_type(ref_schema, root_schema, name_=name_)
 
-    any_of_schemas = json_schema.get("anyOf")
+    any_of_schemas = []
+    if "anyOf" in json_schema or "oneOf" in json_schema:
+        any_of_schemas = json_schema.get("anyOf", []) + json_schema.get("oneOf", [])
     if any_of_schemas:
         any_of_types = [
             _json_schema_to_pydantic_type(schema, root_schema)
             for schema in any_of_schemas
         ]
         return Union[tuple(any_of_types)]
+
+    all_of_schemas = json_schema.get("allOf")
+    if all_of_schemas:
+        all_of_types = [
+            _json_schema_to_pydantic_type(schema, root_schema)
+            for schema in all_of_schemas
+        ]
+        if len(all_of_types) == 1:
+            return all_of_types[0]
+        breakpoint()
+        return tuple(all_of_types)
 
     type_ = json_schema.get("type")
 
