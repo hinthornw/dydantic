@@ -1,5 +1,8 @@
 # Dydantic
 
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/hinthornw/dydantic)
+[![PyPI](https://img.shields.io/pypi/v/dydantic)](https://pypi.org/project/dydantic/)
+
 [Dydantic](https://github.com/hinthornw/dydantic) is a Python library for dynamically generating [Pydantic](https://github.com/pydantic/pydantic) models from [JSON Schema](https://json-schema.org/). It provides a convenient way to create Pydantic models on-the-fly from general user-defined schemas.
 
 <p align="center">
@@ -31,7 +34,7 @@ Contributions to dydantic are welcome! If you find any issues or have suggestion
 
 ## License
 
-dydantic is open-source software licensed under the [MIT License](https://github.com/hinthornw/dydantic/blob/main/LICENSE).
+`dydantic` is open-source software licensed under the [MIT License](https://github.com/hinthornw/dydantic/blob/main/LICENSE).
 
 
 Built with ❤️ by [![Twitter](https://img.shields.io/twitter/follow/WHinthorn?style=social)](https://twitter.com/WHinthorn)

@@ -54,10 +54,22 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
+          import:
+            - https://docs.python.org/3/objects.inv
           options:
             members_order: source 
             allow_inspection: true
+            heading_level: 3
             show_bases: true
+            inherited_members: true
+            selection:
+                docstring_style: google
+            docstring_section_style: list
+            show_root_toc_entry: false 
+            show_signature_annotations: true
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            signature_crossrefs: true
   - minify:
       minify_html: true
 nav:
