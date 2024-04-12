@@ -65,7 +65,7 @@ plugins:
             selection:
                 docstring_style: google
             docstring_section_style: list
-            show_root_toc_entry: false 
+            show_root_toc_entry: true 
             show_signature_annotations: true
             show_symbol_type_heading: true
             show_symbol_type_toc: true
