@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dydantic"
-version = "0.0.4"
+version = "0.0.5"
 description = "Dynamically generate pydantic models from JSON schema."
 authors = ["William Fu-Hinthorn <13333726+hinthornw@users.noreply.github.com>"]
 license = "MIT"

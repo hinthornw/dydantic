@@ -135,7 +135,7 @@ schema = {
 )
 def test_create_model_from_dino_pika_schema(input, should_error):
     model = create_model_from_schema(schema)
-    # print(model.schema_json())
+    model.schema_json()  # test it is serializable
     if should_error:
         with pytest.raises(ValidationError):
             model.model_validate(input)

@@ -243,6 +243,8 @@ class UuidModel(BaseModel):
 )
 def test_create_model_from_schema_formats(model: Type[BaseModel], inputs: dict):
     dynamic_model = create_model_from_schema(model.model_json_schema())
+    dynamic_model.schema_json()  # test it is serializable
+    dynamic_model.model_json_schema()  # test it is serializable
     error = None
     try:
         model.model_validate(inputs)
