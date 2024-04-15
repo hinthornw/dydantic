@@ -390,13 +390,14 @@ def _json_schema_to_pydantic_field(
     description = json_schema.get("description")
     examples = json_schema.get("examples")
     is_required = name in required
-    default = ... if is_required else None
 
     field_kwargs = {
         "description": description,
         "examples": examples,
-        "default": default,
     }
+    if not is_required:
+        field_kwargs["default"] = None
+    default = ... if is_required else None
 
     if isinstance(type_, type) and issubclass(type_, (int, float)):
         if "minimum" in json_schema:
@@ -476,7 +477,6 @@ def _json_schema_to_pydantic_type(
         ]
         if len(all_of_types) == 1:
             return all_of_types[0]
-        breakpoint()
         return tuple(all_of_types)
 
     type_ = json_schema.get("type")
