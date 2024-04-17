@@ -24,6 +24,9 @@ mypy = "^1.9.0"
 poethepoet = "^0.25.0"
 pytest = "^8.1.1"
 
+[tool.poetry.group.email.dependencies]
+email-validator = { version = "^2.1", optional = true }
+
 
 [tool.poetry.group.docs.dependencies]
 mkdocs = "^1.5.3"
