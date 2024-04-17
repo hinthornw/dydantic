@@ -244,14 +244,15 @@ class UuidModel(BaseModel):
 def test_create_model_from_schema_formats(model: Type[BaseModel], inputs: dict):
     dynamic_model = create_model_from_schema(model.model_json_schema())
     dynamic_model.schema_json()  # test it is serializable
-    dynamic_model.model_json_schema()  # test it is serializable
+    dynamic_model.model_json_schema()  # test it is serializable using the v2 schema
     error = None
     try:
         model.model_validate(inputs)
     except Exception as e:
         error = str(e)
     if not error:
-        dynamic_model.model_validate(inputs)
+        result = dynamic_model.model_validate(inputs)
+        dynamic_model.model_validate(result.model_dump())
     else:
         with pytest.raises(Exception):
             dynamic_model.model_validate(inputs)

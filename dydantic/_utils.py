@@ -437,6 +437,8 @@ def _json_schema_to_pydantic_field(
             field_kwargs["min_length"] = json_schema["minLength"]
         if "maxLength" in json_schema:
             field_kwargs["max_length"] = json_schema["maxLength"]
+    if not is_required:
+        type_ = Optional[type_]
     return (type_, Field(default, json_schema_extra=field_kwargs))
 
 
