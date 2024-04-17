@@ -1,0 +1,51 @@
+name: Unit Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: install deps
+        run: |
+          pip install poetry poethepoet
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12
+          cache: poetry
+          cache-dependency-path: "poetry.lock"
+      - name: Poetry install
+        run: |
+          poetry install --with dev,test,email
+      - name: Run tests
+        run: |
+          poe test
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: install deps
+        run: |
+          pip install poetry poethepoet
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12
+          cache: poetry
+          cache-dependency-path: "poetry.lock"
+      - name: Poetry install
+        run: |
+          poetry install --with dev
+      - name: Lint code
+        run: |
+          poe lint
