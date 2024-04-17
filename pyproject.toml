@@ -9,6 +9,10 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.9"
 pydantic = "^2"
+email-validator = { version = "^2.1", optional = true }
+
+[tool.poetry.extras]
+email = ["email-validator"]
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.3.5"
@@ -43,24 +47,13 @@ build-backend = "poetry.core.masonry.api"
 ruff = "ruff"
 black = "black"
 mypy = "mypy"
-format = [
-    "ruff check --fix .",
-    "black .",
-    "ruff format ."
-]
-lint = [
-    "ruff check .",
-    "mypy ."
-]
+format = ["ruff check --fix .", "black .", "ruff format ."]
+lint = ["ruff check .", "mypy ."]
 pytest = "poetry run pytest"
 test = "poetry run pytest tests"
 doctest = "pytest --doctest-modules dydantic"
 
 mkdocs = "poetry run mkdocs"
-build-docs ="mkdocs build --clean -f docs/mkdocs.yml"
+build-docs = "mkdocs build --clean -f docs/mkdocs.yml"
 
-serve-docs = [
-   "build-docs",
-   "mkdocs serve -f docs/mkdocs.yml",
-]
-
+serve-docs = ["build-docs", "mkdocs serve -f docs/mkdocs.yml"]
