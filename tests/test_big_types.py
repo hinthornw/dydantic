@@ -141,5 +141,4 @@ def test_create_model_from_dino_pika_schema(input, should_error):
             model.model_validate(input)
     else:
         result = model.model_validate(input)
-        model.model_validate(result.model_dump()) 
-
+        model.model_validate(result.model_dump())
