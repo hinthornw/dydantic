@@ -169,7 +169,7 @@ class Project(BaseModel):
                     }
                 ],
             },
-            "2 validation errors for Project\ntasks",
+            "1 validation error for Project\ntasks",
         ),
     ],
 )

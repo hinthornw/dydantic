@@ -393,8 +393,9 @@ def _json_schema_to_pydantic_field(
 
     field_kwargs = {
         "description": description,
-        "examples": examples,
     }
+    if examples:
+        field_kwargs["examples"] = examples
     if not is_required:
         field_kwargs["default"] = None
     default = ... if is_required else None
