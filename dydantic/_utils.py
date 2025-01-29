@@ -390,10 +390,9 @@ def _json_schema_to_pydantic_field(
     description = json_schema.get("description")
     examples = json_schema.get("examples")
     is_required = name in required
-
-    field_kwargs = {
-        "description": description,
-    }
+    field_kwargs = {}
+    if description:
+        field_kwargs["description"] = description
     if examples:
         field_kwargs["examples"] = examples
     if not is_required:
